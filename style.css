@@ -1,0 +1,223 @@
+/*
+Navimin - Lightweight Admin Theme
+By Andri Sutanto
+Surabaya - Indonesia
+*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+	background: grey;
+}
+
+.header {
+	width:100%;
+	height: 50px;
+  background-color: #222a32;
+	position: fixed;
+	border-style: solid;
+	border-width: 2px 0 0 0;
+	border-color: #ec1c24;
+	z-index: 10;
+}
+
+.logo {
+	width: 220px;
+	height: 100%;
+	background-color: #101921;
+	padding: 12px;
+	float: left;
+}
+
+.logo a {
+	color: #fff;
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+	font-size: 17pt;
+	line-height: 100%;
+}
+
+.logo a:hover {
+	color: #ec1c24;
+	font-family: 'Lato', sans-serif;
+	text-decoration: none;
+}
+
+.status {
+	float: right;
+	padding: 12px;
+	width: 165px;
+	height: 100%;
+	background-color: #38444f;
+}
+
+.status a {
+	line-height: 100%;
+	font-size: 10pt;
+	font-weight: 500;
+	color: #fff;
+}
+
+.status a:hover {
+	color: #ec1c24;
+	text-decoration: none;
+}
+
+.status i {
+	line-height: 100%;
+	font-size: 12pt;
+	color: #fff;
+}
+
+#collapse {
+	display: none;
+	float: right;
+	font-weight: 100;
+}
+
+.sidebar {
+  background-color: #38444f;
+	float: left;
+	top: 50px;
+	left: 0;
+	width: 220px;
+	height: 100%;
+	position: fixed;
+}
+
+#menu li{
+	list-style: none;
+}
+
+#menu li a{
+	color: #cccccc;
+	display: block;
+	padding: 15px;
+	font-size: 11pt;
+	border-bottom: 1px solid #444;
+	text-decoration: none;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.5s ease;
+}
+
+#menu li a:hover {
+	background: #5c6771;
+	color: #fff;
+}
+
+#menu li a.selected {
+	background: #39f;
+	color: #fff;
+}
+
+.content {
+  background-color: #ffffff;
+	width: auto;
+	height: 100%;
+	margin-left: 220px;
+	padding: 55px 55px 15px 55px;
+}
+
+.footer {
+  background-color: #8e8e8e;
+	float: left;
+	left: 220px;
+	bottom: 0px;
+	height: 35px;
+	width: 100%;
+	position: fixed;
+	padding: 8px 0 8px 10px;
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin: 25px 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+  border-radius: 6px;
+  color: rgba(0,0,0, 0.87);
+  background: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+  float: left;
+  text-align: center;
+	padding: 30px 0 0 40px;
+}
+
+.card-header i {
+	font-size: 56px;
+  line-height: 56px;
+  width: 56px;
+  height: 56px;
+	color: #59626a;
+}
+
+.card-content {
+  text-align: right;
+  padding-top: 10px;
+	padding: 15px 20px;
+  position: relative;
+}
+
+.card-footer {
+  margin: 0 20px 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eeeeee;
+}
+
+.heading {
+
+	top: 0;
+}
+
+
+
+@media screen and (max-width: 480px) {
+		#collapse {
+			display: block;
+		}
+
+		.content {
+        background-color: lightgreen;
+    }
+
+		.header {
+			position: absolute;
+			top: 0;
+		}
+
+		.footer {
+			left: 0px;
+			position: fixed;
+			bottom: 0;
+		}
+
+		.sidebar {
+			width: 100%;
+			display: none;
+			height: auto;
+		}
+
+		.content {
+			margin-left: 0;
+		}
+}

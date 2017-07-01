@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Navimin - Lightweight Admin Theme</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="./js/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+  <div class="header">
+    <div class="logo">
+      <a href="#">navimin</a>
+      <a id="collapse" href="#"><i class="fa fa-bars"></i></a>
+    </div>
+    <div class="status">
+      <a href="#"><i class="fa fa-user-circle"></i>&nbsp;&nbsp;&nbsp;Andri Sutanto</a>
+    </div>
+  </div>
+  <div class="sidebar">
+    <ul id="menu">
+      <li><a class="active" href="#">Dashboard</a></li>
+      <li><a href="#">Form</a></li>
+      <li><a href="#">Chart</a></li>
+      <li><a href="#">Table</a></li>
+      <li><a href="#">Paragraph</a></li>
+      <li><a href="#">Element</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    <div class="heading">
+      <h1>Dashboard</h1>
+      <p>Ini adalah dashboard anda.</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card">
+            <div class="card-header">
+            	<i class="fa fa-user-circle"></i>
+            </div>
+            <div class="card-content">
+              <p><strong>Users</strong></p>
+              <h3>123,340</h3>
+            </div>
+            <div class="card-footer">
+              <i class="fa fa-info"></i>
+              <a href="#">See detailed report</a>
+            </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card">
+            <div class="card-header">
+              <i class="fa fa-user-plus"></i>
+            </div>
+            <div class="card-content">
+              <p><strong>Premium</strong></p>
+              <h3>37,900</h3>
+            </div>
+            <div class="card-footer">
+              <i class="fa fa-info"></i>
+              <a href="#">See detailed report</a>
+            </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card">
+            <div class="card-header">
+            	<i class="fa fa-arrow-circle-down"></i>
+            </div>
+            <div class="card-content">
+              <p><strong>Downloads</strong></p>
+              <h3>923,340</h3>
+            </div>
+            <div class="card-footer">
+              <i class="fa fa-info"></i>
+              <a href="#">See detailed report</a>
+            </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card">
+            <div class="card-header">
+            	<i class="fa fa-paper-plane"></i>
+            </div>
+            <div class="card-content">
+              <p><strong>Visits</strong></p>
+              <h3>1,123,340</h3>
+            </div>
+            <div class="card-footer">
+              <i class="fa fa-info"></i>
+              <a href="#">See detailed report</a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <canvas id="mixed-chart" width="500" height="250"></canvas>
+      </div>
+      <div class="col-md-4">
+        <canvas id="doughnut-chart" width="100" height="100"></canvas>
+      </div>
+    </div>
+
+  </br></br></br></br>
+
+  </div>
+  <div class="footer">
+    <p>Copyright &copy;2017</p>
+  </div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+    $("#collapse").click(function(){
+      $(".sidebar").slideToggle('fast');
+    });
+  window.onresize = function(event) {
+    if($(window).width() > 480){
+    $(".sidebar").show();
+    }};
+  });
+</script>
+
+<script>
+// Bar chart
+new Chart(document.getElementById("mixed-chart"), {
+    type: 'bar',
+    data: {
+      labels: ["1900", "1950", "1999", "2050", "2060", "2070", "2080"],
+      datasets: [{
+          label: "Jakarta",
+          type: "line",
+          borderColor: "#376db6",
+          data: [200,300,400,450,500,550,600],
+          fill: false
+        }, {
+          label: "Surabaya",
+          type: "line",
+          borderColor: "#fd9426",
+          data: [50,75,100,150,250,350,550],
+          fill: false
+        }, {
+          label: "Jakarta",
+          type: "bar",
+          backgroundColor: "#5fc9f8",
+          data: [200,300,400,450,500,550,600],
+        }, {
+          label: "Surabaya",
+          type: "bar",
+          backgroundColor: "#fecb2e",
+          backgroundColorHover: "#3e95cd",
+          data: [50,75,100,150,250,350,550]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Population growth (millions): Jakarta & Surabaya'
+      },
+      legend: { display: false }
+    }
+});
+
+new Chart(document.getElementById("doughnut-chart"), {
+    type: 'doughnut',
+    data: {
+      labels: ["Jakarta", "Surabaya"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#475258", "#fc3158"],
+          data: [450,150]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
+
+
+</script>
+
+</body>
+</html>
